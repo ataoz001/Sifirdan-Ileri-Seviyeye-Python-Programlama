@@ -78,27 +78,6 @@ class Kumanda():
 
 kumanda = Kumanda()
 
-print("""
-
-Televizyon Uygulaması
-
-
-1. Tv Aç
-
-2. Tv Kapat
-
-3. Ses Ayarları
-
-4. Kanal Ekle
-
-5. Kanal Sayısını Öğrenme
-
-6. Rastgele Kanala Geçme
-
-7. Televizyon Bilgileri
-
-Çıkmak için 'q' ya basın.
-""")
 while True:
     print('acmak istiyor musunuz?')
     cevap1 = input()
@@ -109,34 +88,50 @@ while True:
         print('cikiyorsunuz')
         continue
     while True:
+        print("""
+
+Televizyon Uygulaması
+
+1. Tv Kapat
+
+2. Ses Ayarları
+
+3. Kanal Ekle
+
+4. Kanal Sayısını Öğrenme
+
+5. Rastgele Kanala Geçme
+
+6. Televizyon Bilgileri
+
+Çıkmak için 'q' ya basın.
+""")
 
         işlem = input("İşlemi Seçiniz:")
 
-        if (işlem == "1"):
-            kumanda.tv_ac()
         if (kumanda.tv_durum == 'Acik'):
 
-            if (işlem == "2"):
+            if (işlem == "1"):
                 kumanda.tv_kapat()
                 break
 
-            elif (işlem == "3"):
+            elif (işlem == "2"):
                 kumanda.ses_ayarları()
 
-            elif (işlem == "4"):
+            elif (işlem == "3"):
                 kanal_isimleri = input("Kanal isimlerini ',' ile ayırarak girin:")
 
                 kanal_listesi = kanal_isimleri.split(",")
 
                 for eklenecekler in kanal_listesi:
                     kumanda.kanal_ekle(eklenecekler)
-            elif (işlem == "5"):
+            elif (işlem == "4"):
 
                 print("Kanal Sayısı:", len(kumanda))
 
-            elif (işlem == "6"):
+            elif (işlem == "5"):
                 kumanda.rastgele_kanal()
-            elif (işlem == "7"):
+            elif (işlem == "6"):
                 print(kumanda)
 
             else:
